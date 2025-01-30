@@ -70,6 +70,8 @@ function getAllSentEmails(req, res) {
 
 function addCCtoNonprofit(nonProfitEmail, ccEmail) {
   const nonprofitEmails = req.body;
+  const {email } = req.params;
+  const { cc } req.body
   // if nonProfit doesn't exist, error
   // error handle to make sure the cc exists, add email to cc if doesn't exist
 
