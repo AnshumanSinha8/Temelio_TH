@@ -25,18 +25,28 @@ curl -X POST \
      -d '{
        "name": "Nonprofit A",
        "address": "1 Example St",
-       "email": "NonprofitA@gmail.com"
-     }' \
+       "email": "NonprofitA@gmail.com",
+       "cc": "ccdemail1@gmail.com",
+       "bcc": "bccdemail1@gmail.com
+     }
      http://localhost:8080/nonprofits
 
 - To Bulk send emails:
 curl -X POST \
      -H "Content-Type: application/json" \
      -d '{
-       "nonprofitEmails": ["NonprofitA@gmail.com"],
+       "nonprofitEmails": ["NonprofitB@gmail.com"],
        "template": "Hello {name}, we see you at {address} on {date}"
      }' \
      http://localhost:8080/emails/bulk
 
 - To retrieve all emails sent:
 curl http://localhost:8080/emails
+
+- To add a cc to a nonProfit:
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -d '{
+       "cc": ["CC@gmail.com"]
+     }' \
+     http://localhost:8080/emails/addCC

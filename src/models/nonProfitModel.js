@@ -10,7 +10,7 @@ const nonprofits = new Map();
 
 // CRUD operations on nonprofits:
 function createNonprofit({ name, address, email }) {
-  nonprofits.set(email, { name, address, email });
+  nonprofits.set(email, { name, address, email, cc });
 }
 
 function getNonprofitByEmail(email) {
